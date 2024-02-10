@@ -34,6 +34,7 @@ jobs:
           command: |
             cargo fmt
             cargo check
+            cargo clippy
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
