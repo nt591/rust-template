@@ -30,11 +30,14 @@ jobs:
       - store_test_results:
           path: /tmp/test-reports
       - run:
+          name: Lints
+          command: |
+            cargo clippy
+      - run:
           name: Static Analysis and Format Check
           command: |
             cargo fmt
             cargo check
-            cargo clippy
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
